@@ -37,6 +37,16 @@ class ItemAdapter extends ArrayAdapter<Items> {
         //
         TextView shapeNameTextView = view.findViewById(R.id.item1_name);
         shapeNameTextView.setText(currentItem.getItemName());
+        ImageView shapeRemoveImg = view.findViewById(R.id.shape_remove);
+
+        shapeRemoveImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                items.remove(position);
+                notifyDataSetChanged();
+
+            }
+        });
 
         //
         ImageView shapeImageTextView = view.findViewById(R.id.item1_image);
